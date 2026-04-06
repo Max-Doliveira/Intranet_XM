@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(./images/fundo.jpg);
+    background-size: cover;
+    background-position: center;
+    border: none;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 500px;
+    padding: 20px;
+    background-color: rgba(76, 119, 212, 0.082);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.89);
+}
+
+.login input {
+    width: 90%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 3px solid #999696;
+    border-radius: 8px;
+}
+
+.login button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.input-remember {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.input-remember input {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.input-remember label {
+    margin-right: 10px;
+    color: #999696;
+}
+
+.title_login {
+    color: #999696;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.login input:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+.login button:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.login button:active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.login button:disabled {
+    background-color: #4CAF50;
+    color: white;
+}
