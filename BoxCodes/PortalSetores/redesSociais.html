@@ -12,6 +12,7 @@
         body {
             margin: 0;
             padding: 0;
+            font-family: 'Passion One', sans-serif;
         }
 
         main {
@@ -22,7 +23,7 @@
 
         .card_container {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             background-color: #1a552b;
             width: 65%;
             height: 100%;
@@ -33,6 +34,7 @@
         .direito {
             display: flex;
             justify-content: center;
+            align-items: center;
             width: 35%;
             height: 100%;
             color: #1a552b;
@@ -41,7 +43,6 @@
 
         .title {
             color: #f7f6ea;
-            font-family: 'Passion One', sans-serif;
             font-size: 50px;
             margin: 0;
             padding: 10px;
@@ -50,12 +51,12 @@
         .text {
             color: #f7f6ea;
             font-family: Barlow, sans-serif;
-            font-size: 20px;
+            font-size: 15px;
             margin: 0;
             padding: 10px;
         }
 
-        .imagen {
+        .coroa {
             width: 280px;
             height: 280px;
             background-image: url("https://i.postimg.cc/W3H1fdtB/coroa-removebg-preview.png");
@@ -72,8 +73,48 @@
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
+            gap: 32px;
             text-shadow: none;
             color: #f8af3c;
+        }
+
+        .links_redes_link {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .links_redes_link_insta {
+            width: 24px;
+            height: 24px;
+            margin-left: 20px;
+            margin-right: 10px;
+            background-image: url(https://i.postimg.cc/26XG0Nhp/instagram_svgrepo_com.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .links_redes_link_linkedin {
+            width: 24px;
+            height: 24px;
+            margin-left: 20px;
+            margin-right: 10px;
+            background-image: url(https://i.postimg.cc/4dFPWRVT/linkedin_social_media_svgrepo_com.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .links_redes_link_twitter {
+            width: 24px;
+            height: 24px;
+            margin-left: 20px;
+            margin-right: 10px;
+            background-image: url(https://i.postimg.cc/Kzsf0hBh/twitter_154_svgrepo_com.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
         }
     </style>
 </head>
@@ -83,25 +124,25 @@
         <section class="card_container">
             <div>
                 <h1 class="title">NOSSAS REDES SOCIAIS</h1>
-                <p class="text">Acesse nossas redes sociais!</p>
+                <p class="text">Siga a empresa e acompanhe as novidades da marca!</p>
             </div>
             <div class="links_redes">
                 <div class="links_redes_link">
-                    <span class="links_redes_link_img"></span>
+                    <span class="links_redes_link_insta"></span>
                     <h2>Instagram</h2>
                 </div>
                 <div class="links_redes_link">
-                    <span class="links_redes_link_img"></span>
+                    <span class="links_redes_link_linkedin"></span>
                     <h2>Linked In</h2>
                 </div>
                 <div class="links_redes_link">
-                    <span class="links_redes_link_img"></span>
+                    <span class="links_redes_link_twitter"></span>
                     <h2>Twitter</h2>
                 </div>
             </div>
         </Section>
         <Section class="card_container direito">
-            <div class="imagen">
+            <div class="coroa">
             </div>
         </Section>
     </Main>
