@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            display: flex;
+            flex-direction: row;
+            height: 300px;
+        }
+
+        .card_container {
+            display: flex;
+            flex-direction: row;
+            background-color: #1a552b;
+            width: 65%;
+            height: 100%;
+            color: #1a552b;
+            text-shadow: 1px 1px 1px gray;
+        }
+
+        .direito {
+            display: flex;
+            justify-content: center;
+            width: 35%;
+            height: 100%;
+            color: #1a552b;
+            text-shadow: 1px 1px 1px gray;
+        }
+
+        .title {
+            color: #f7f6ea;
+            font-family: 'Passion One', sans-serif;
+            font-size: 50px;
+            margin: 0;
+            padding: 10px;
+        }
+
+        .text {
+            color: #f7f6ea;
+            font-family: Barlow, sans-serif;
+            font-size: 20px;
+            margin: 0;
+            padding: 10px;
+        }
+
+        .imagen {
+            width: 280px;
+            height: 280px;
+            background-image: url("https://i.postimg.cc/W3H1fdtB/coroa-removebg-preview.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .imge {
+            flex-direction: row-reverse;
+        }
+
+        .links_redes {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            text-shadow: none;
+            color: #f8af3c;
+        }
+    </style>
+</head>
+
+<body>
+    <Main>
+        <section class="card_container">
+            <div>
+                <h1 class="title">NOSSAS REDES SOCIAIS</h1>
+                <p class="text">Acesse nossas redes sociais!</p>
+            </div>
+            <div class="links_redes">
+                <div class="links_redes_link">
+                    <span class="links_redes_link_img"></span>
+                    <h2>Instagram</h2>
+                </div>
+                <div class="links_redes_link">
+                    <span class="links_redes_link_img"></span>
+                    <h2>Linked In</h2>
+                </div>
+                <div class="links_redes_link">
+                    <span class="links_redes_link_img"></span>
+                    <h2>Twitter</h2>
+                </div>
+            </div>
+        </Section>
+        <Section class="card_container direito">
+            <div class="imagen">
+            </div>
+        </Section>
+    </Main>
+</body>
+
+</html>
