@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xeque Mate Conecta - Intranet</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #F8F6F0;
+            /* Off-white/Beige background */
+        }
+
+        /* Custom Xeque Mate Colors */
+        .bg-xm-green {
+            background-color: #1B3B2B;
+        }
+
+        .text-xm-green {
+            color: #1B3B2B;
+        }
+
+        .border-xm-green {
+            border-color: #1B3B2B;
+        }
+
+        .bg-xm-yellow {
+            background-color: #F4B81C;
+        }
+
+        .text-xm-yellow {
+            color: #F4B81C;
+        }
+
+        .bg-xm-light {
+            background-color: #EFECE3;
+        }
+
+        /* Hide scrollbar for clean horizontal scrolls */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        /* Starburst effect for "Vaga" */
+        .starburst {
+            position: relative;
+            display: inline-block;
+            width: 250px;
+            height: 250px;
+            background: #F4B81C;
+            clip-path: polygon(50% 0%, 61% 16%, 80% 10%, 84% 28%, 100% 34%, 93% 50%, 100% 66%, 84% 72%, 80% 90%, 61% 84%, 50% 100%, 39% 84%, 20% 90%, 24% 72%, 0% 66%, 7% 50%, 0% 34%, 24% 28%, 20% 10%, 39% 16%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            transform: rotate(-5deg);
+        }
+    </style>
+</head>
+
+<body class="text-gray-800 antialiased">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="bg-xm-green text-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer">
+                    <i class="ph-fill ph-check-square text-xm-yellow text-4xl mr-2"></i>
+                    <h1 class="font-extrabold text-2xl tracking-tighter leading-none">
+                        XEQUE MATE<br><span class="text-xm-yellow text-lg tracking-widest font-bold">CONECTA</span>
+                    </h1>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-6 lg:space-x-8 font-semibold text-sm">
+                    <a href="#oportunidades"
+                        class="hover:text-xm-yellow transition-colors duration-200">OPORTUNIDADES!</a>
+                    <a href="#calendario" class="hover:text-xm-yellow transition-colors duration-200">XEQUE
+                        CALENDÁRIO</a>
+                    <a href="#setores" class="hover:text-xm-yellow transition-colors duration-200">PORTAL DOS
+                        SETORES</a>
+                    <a href="#destaques" class="hover:text-xm-yellow transition-colors duration-200">DESTAQUES</a>
+                    <a href="#arquivos" class="hover:text-xm-yellow transition-colors duration-200">ARQUIVOS
+                        INSTITUCIONAIS</a>
+                    <a href="#arquivos" class="hover:text-xm-yellow transition-colors duration-200"
+                        onclick="logout()">SAIR</a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-white hover:text-xm-yellow focus:outline-none">
+                        <i class="ph ph-list text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+
+        <!-- DESTAQUES & ACESSO RÁPIDO SECTION -->
+        <section id="destaques" class="flex flex-col lg:flex-row gap-6">
+
+            <!-- Carrossel Destaques (Left) -->
+            <div class="lg:w-3/4 bg-white rounded-2xl shadow-sm overflow-hidden relative group">
+                <div id="carousel-inner"
+                    class="flex h-64 sm:h-80 md:h-96 transition-transform duration-500 ease-in-out">
+                    <!-- Slide 1 -->
+                    <div
+                        class="w-full flex-shrink-0 relative bg-xm-green flex items-center justify-center text-center p-8">
+                        <div
+                            class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80')] bg-cover bg-center mix-blend-overlay">
+                        </div>
+                        <div class="relative z-10 text-white">
+                            <h2
+                                class="text-xm-yellow font-extrabold text-4xl md:text-6xl mb-4 uppercase tracking-wide drop-shadow-lg">
+                                Semana Sipat</h2>
+                            <p class="text-2xl md:text-4xl font-bold uppercase">Dia 13 a 17</p>
+                            <button
+                                class="mt-8 bg-xm-yellow text-xm-green font-bold py-3 px-6 rounded-full hover:bg-white transition shadow-lg">PARTICIPE</button>
+                        </div>
+                    </div>
+                    <!-- Slide 2 (Placeholder for more) -->
+                    <div
+                        class="w-full flex-shrink-0 relative bg-xm-yellow flex items-center justify-center text-center p-8">
+                        <div class="relative z-10 text-xm-green">
+                            <h2 class="font-extrabold text-4xl md:text-6xl mb-4 uppercase tracking-wide">Festa da Firma
+                            </h2>
+                            <p class="text-2xl md:text-4xl font-bold uppercase">Confirmem presença!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carousel Controls -->
+                <button onclick="prevSlide()"
+                    class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <i class="ph-bold ph-caret-left text-2xl"></i>
+                </button>
+                <button onclick="nextSlide()"
+                    class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <i class="ph-bold ph-caret-right text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Acesso Rápido (Right Sidebar) -->
+            <div class="lg:w-1/4 bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col">
+                <h3
+                    class="text-xl font-bold text-xm-green mb-4 border-b-2 border-xm-yellow pb-2 flex items-center gap-2">
+                    <i class="ph-bold ph-lightning text-xm-yellow"></i> Acesso Rápido
+                </h3>
+                <ul class="space-y-3 flex-grow">
+                    <li><a href="#"
+                            class="flex items-center text-sm font-semibold text-gray-600 hover:text-xm-green hover:bg-gray-50 p-2 rounded transition">
+                            <i class="ph-bold ph-link text-gray-400 mr-2"></i> Sistemas Internos</a></li>
+                    <li><a href="#"
+                            class="flex items-center text-sm font-semibold text-gray-600 hover:text-xm-green hover:bg-gray-50 p-2 rounded transition">
+                            <i class="ph-bold ph-link text-gray-400 mr-2"></i> Holerite / Contracheque</a></li>
+                    <li><a href="#"
+                            class="flex items-center text-sm font-semibold text-gray-600 hover:text-xm-green hover:bg-gray-50 p-2 rounded transition">
+                            <i class="ph-bold ph-link text-gray-400 mr-2"></i> Central de Ajuda TI</a></li>
+                    <li><a href="#"
+                            class="flex items-center text-sm font-semibold text-gray-600 hover:text-xm-green hover:bg-gray-50 p-2 rounded transition">
+                            <i class="ph-bold ph-link text-gray-400 mr-2"></i> Ramais</a></li>
+                    <li><a href="#"
+                            class="flex items-center text-sm font-semibold text-gray-600 hover:text-xm-green hover:bg-gray-50 p-2 rounded transition">
+                            <i class="ph-bold ph-link text-gray-400 mr-2"></i> Código de Conduta</a></li>
+                    <li><a href="#"
+                            class="flex items-center text-sm font-semibold text-gray-600 hover:text-xm-green hover:bg-gray-50 p-2 rounded transition">
+                            <i class="ph-bold ph-link text-gray-400 mr-2"></i> Bando de Imagens XM</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- OPORTUNIDADES SECTION -->
+        <section id="oportunidades"
+            class="bg-xm-light rounded-2xl shadow-sm overflow-hidden flex flex-col md:flex-row items-stretch">
+            <!-- Left Side (Starburst) -->
+            <div class="md:w-5/12 p-8 flex items-center justify-center relative min-h-[300px]">
+                <div class="starburst shadow-xl">
+                    <h3 class="text-xm-green font-black text-2xl uppercase leading-tight transform rotate-5">
+                        Vaga<br>Assistente<br>De Logística
+                    </h3>
+                </div>
+            </div>
+
+            <!-- Right Side (Details) -->
+            <div class="md:w-7/12 bg-xm-green p-8 md:p-12 flex flex-col justify-center text-white relative">
+                <span class="text-sm font-bold tracking-widest text-xm-yellow mb-2 uppercase">Oportunidades</span>
+                <h2 class="text-3xl font-extrabold mb-4">Venha fazer parte do time!</h2>
+                <p class="text-gray-200 text-sm md:text-base leading-relaxed mb-8 opacity-90">
+                    Estamos em busca de um Assistente de Logística para compor a nossa equipe. Se você é organizado,
+                    proativo e quer fazer a diferença garantindo que a Xeque Mate chegue perfeita aos nossos clientes,
+                    essa vaga é para você! (Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+                    nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.)
+                </p>
+
+                <div class="mt-auto flex items-center justify-between">
+                    <a href="#"
+                        class="inline-flex items-center font-bold text-sm tracking-wider hover:text-xm-yellow transition-colors group">
+                        CLIQUE E SAIBA MAIS
+                        <span
+                            class="ml-3 w-8 h-8 rounded-full bg-xm-yellow group-hover:bg-white flex items-center justify-center transition-colors shadow-md">
+                            <i class="ph-bold ph-arrow-right text-xm-green"></i>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CALENDÁRIO & ANIVERSARIANTES -->
+        <section id="calendario" class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            <!-- Info Text -->
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 h-full flex flex-col justify-center">
+                <div
+                    class="w-12 h-12 bg-xm-green text-xm-yellow rounded-xl flex items-center justify-center mb-6 shadow-sm">
+                    <i class="ph-fill ph-calendar-blank text-2xl"></i>
+                </div>
+                <h2 class="text-3xl font-extrabold text-xm-green mb-4">XEQUE CALENDÁRIO</h2>
+                <p class="text-gray-600 mb-8 font-medium leading-relaxed">
+                    Saiba quem está fazendo aniversário e acompanhe as datas mais importantes da empresa para não perder
+                    nenhuma comemoração.
+                </p>
+                <div>
+                    <a href="#"
+                        class="inline-block bg-xm-green text-white font-bold py-3 px-8 rounded-full hover:bg-xm-yellow hover:text-xm-green transition-all shadow-md">
+                        CLIQUE E SAIBA MAIS
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card Aniversariante -->
+            <div class="relative w-full max-w-sm mx-auto">
+                <div class="absolute inset-0 bg-xm-yellow rounded-2xl transform translate-x-3 translate-y-3"></div>
+                <div class="bg-xm-green rounded-2xl shadow-lg relative z-10 overflow-hidden border-2 border-xm-green">
+                    <!-- Photo -->
+                    <div class="h-64 overflow-hidden relative border-b-4 border-xm-yellow">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            alt="" class="w-full h-full object-cover object-top">
+                        <div
+                            class="absolute top-4 right-4 bg-white text-xm-green font-black px-3 py-1 rounded-lg shadow-lg text-sm flex items-center gap-1">
+                            <i class="ph-fill ph-cake text-xm-yellow"></i> DIA 23/01
+                        </div>
+                    </div>
+                    <!-- Info -->
+                    <div class="p-6 text-center text-white">
+                        <p class="text-xm-yellow font-black tracking-widest text-sm uppercase mb-1">Parabéns!</p>
+                        <h3 class="text-2xl font-extrabold mb-2 uppercase">João Kleber</h3>
+                        <p class="text-sm text-gray-300 font-medium">
+                            Assistente de logística<br>e apresentador na Xeque Mate
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTAL DE SETORES -->
+        <section id="setores" class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-extrabold text-xm-green mb-3 uppercase tracking-tight">Portal de Setores</h2>
+                <p class="text-gray-500 font-medium">Dúvidas de como acessar cada setor? Clique abaixo!</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Sector Items -->
+                <a href="#"
+                    class="group bg-xm-light hover:bg-xm-green p-6 rounded-xl text-center transition-all duration-300 flex flex-col items-center justify-center gap-3 border border-transparent hover:border-xm-yellow hover:shadow-lg">
+                    <i class="ph-fill ph-users text-4xl text-xm-green group-hover:text-xm-yellow transition-colors"></i>
+                    <span class="font-bold text-sm text-gray-800 group-hover:text-white uppercase">Departamento
+                        Pessoal</span>
+                </a>
+
+                <a href="#"
+                    class="group bg-xm-light hover:bg-xm-green p-6 rounded-xl text-center transition-all duration-300 flex flex-col items-center justify-center gap-3 border border-transparent hover:border-xm-yellow hover:shadow-lg">
+                    <i class="ph-fill ph-heart text-4xl text-xm-green group-hover:text-xm-yellow transition-colors"></i>
+                    <span class="font-bold text-sm text-gray-800 group-hover:text-white uppercase">Gente &
+                        Cultura</span>
+                </a>
+
+                <a href="#"
+                    class="group bg-xm-light hover:bg-xm-green p-6 rounded-xl text-center transition-all duration-300 flex flex-col items-center justify-center gap-3 border border-transparent hover:border-xm-yellow hover:shadow-lg">
+                    <i
+                        class="ph-fill ph-factory text-4xl text-xm-green group-hover:text-xm-yellow transition-colors"></i>
+                    <span class="font-bold text-sm text-gray-800 group-hover:text-white uppercase">Produção</span>
+                </a>
+
+                <a href="#"
+                    class="group bg-xm-light hover:bg-xm-green p-6 rounded-xl text-center transition-all duration-300 flex flex-col items-center justify-center gap-3 border border-transparent hover:border-xm-yellow hover:shadow-lg">
+                    <i
+                        class="ph-fill ph-megaphone text-4xl text-xm-green group-hover:text-xm-yellow transition-colors"></i>
+                    <span class="font-bold text-sm text-gray-800 group-hover:text-white uppercase">Marketing</span>
+                </a>
+
+                <a href="#"
+                    class="group bg-xm-light hover:bg-xm-green p-6 rounded-xl text-center transition-all duration-300 flex flex-col items-center justify-center gap-3 border border-transparent hover:border-xm-yellow hover:shadow-lg">
+                    <i
+                        class="ph-fill ph-palette text-4xl text-xm-green group-hover:text-xm-yellow transition-colors"></i>
+                    <span class="font-bold text-sm text-gray-800 group-hover:text-white uppercase">Estilo</span>
+                </a>
+
+                <a href="#"
+                    class="group bg-xm-light hover:bg-xm-green p-6 rounded-xl text-center transition-all duration-300 flex flex-col items-center justify-center gap-3 border border-transparent hover:border-xm-yellow hover:shadow-lg">
+                    <i
+                        class="ph-fill ph-chart-line-up text-4xl text-xm-green group-hover:text-xm-yellow transition-colors"></i>
+                    <span class="font-bold text-sm text-gray-800 group-hover:text-white uppercase">Financeiro</span>
+                </a>
+
+                <a href="#"
+                    class="group bg-xm-light hover:bg-xm-green p-6 rounded-xl text-center transition-all duration-300 flex flex-col items-center justify-center gap-3 border border-transparent hover:border-xm-yellow hover:shadow-lg">
+                    <i
+                        class="ph-fill ph-camera text-4xl text-xm-green group-hover:text-xm-yellow transition-colors"></i>
+                    <span class="font-bold text-sm text-gray-800 group-hover:text-white uppercase">Estúdio XM</span>
+                </a>
+
+                <!-- Spacer for layout -->
+                <div class="hidden lg:block bg-transparent p-6 rounded-xl text-center"></div>
+            </div>
+        </section>
+
+        <!-- ARQUIVOS INSTITUCIONAIS -->
+        <section id="arquivos" class="mb-12">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-8">
+                <div>
+                    <h2
+                        class="text-3xl font-extrabold text-xm-green mb-2 uppercase tracking-tight flex items-center gap-3">
+                        <i class="ph-bold ph-folder-open text-xm-yellow text-4xl"></i> Arquivos Institucionais
+                    </h2>
+                    <p class="text-gray-500 font-medium ml-12">Acesse nossos materiais e guias da marca!</p>
+                </div>
+                <a href="#"
+                    class="text-sm font-bold text-xm-green hover:text-xm-yellow transition-colors mt-4 md:mt-0 underline">Ver
+                    todos os arquivos</a>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <a href="#"
+                    class="bg-white border border-gray-200 p-5 rounded-xl hover:shadow-lg hover:border-xm-yellow transition-all flex flex-col items-center text-center gap-2 group">
+                    <div
+                        class="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center group-hover:bg-xm-yellow/10 transition-colors">
+                        <i class="ph-fill ph-file-text text-2xl text-gray-400 group-hover:text-xm-yellow"></i>
+                    </div>
+                    <span class="font-bold text-sm text-gray-700">Timbrados</span>
+                </a>
+
+                <a href="#"
+                    class="bg-white border border-gray-200 p-5 rounded-xl hover:shadow-lg hover:border-xm-yellow transition-all flex flex-col items-center text-center gap-2 group">
+                    <div
+                        class="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center group-hover:bg-xm-yellow/10 transition-colors">
+                        <i class="ph-fill ph-image text-2xl text-gray-400 group-hover:text-xm-yellow"></i>
+                    </div>
+                    <span class="font-bold text-sm text-gray-700">Papéis de Parede</span>
+                </a>
+
+                <a href="#"
+                    class="bg-white border border-gray-200 p-5 rounded-xl hover:shadow-lg hover:border-xm-yellow transition-all flex flex-col items-center text-center gap-2 group">
+                    <div
+                        class="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center group-hover:bg-xm-yellow/10 transition-colors">
+                        <i class="ph-fill ph-video-camera text-2xl text-gray-400 group-hover:text-xm-yellow"></i>
+                    </div>
+                    <span class="font-bold text-sm text-gray-700">Fundos de Meet</span>
+                </a>
+
+                <a href="#"
+                    class="bg-white border border-gray-200 p-5 rounded-xl hover:shadow-lg hover:border-xm-yellow transition-all flex flex-col items-center text-center gap-2 group">
+                    <div
+                        class="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center group-hover:bg-xm-yellow/10 transition-colors">
+                        <i class="ph-fill ph-book-open-text text-2xl text-gray-400 group-hover:text-xm-yellow"></i>
+                    </div>
+                    <span class="font-bold text-sm text-gray-700">Regras de Circulação</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER / REDES SOCIAIS -->
+    <footer class="bg-xm-green text-white pt-12 pb-8 mt-12 border-t-4 border-xm-yellow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+
+            <i class="ph-fill ph-chat-circle-text text-xm-yellow text-5xl mb-4"></i>
+            <h2 class="text-2xl font-extrabold uppercase mb-2">Nossas Redes Sociais</h2>
+            <p class="text-gray-300 font-medium mb-8">Siga a empresa e acompanhe as novidades da marca!</p>
+
+            <div class="flex gap-6 mb-12">
+                <a href="#"
+                    class="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center hover:bg-xm-yellow hover:text-xm-green transition-all transform hover:scale-110">
+                    <i class="ph-fill ph-instagram-logo text-3xl"></i>
+                </a>
+                <a href="#"
+                    class="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center hover:bg-xm-yellow hover:text-xm-green transition-all transform hover:scale-110">
+                    <i class="ph-fill ph-linkedin-logo text-3xl"></i>
+                </a>
+                <a href="#"
+                    class="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center hover:bg-xm-yellow hover:text-xm-green transition-all transform hover:scale-110">
+                    <i class="ph-fill ph-twitter-logo text-3xl"></i>
+                </a>
+            </div>
+
+            <div
+                class="border-t border-white/20 w-full pt-8 text-sm text-gray-400 flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; 2026 Xeque Mate Bebidas. Todos os direitos reservados.</p>
+                <div class="mt-4 md:mt-0 flex items-center gap-2">
+                    <i class="ph-fill ph-check-square text-xm-yellow"></i> Xeque Mate Conecta
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple JavaScript for Carousel -->
+    <script>
+        const carouselInner = document.getElementById('carousel-inner');
+        let currentSlide = 0;
+        const totalSlides = 2; // Quantity of slides inside the carousel
+
+        function updateCarousel() {
+            carouselInner.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        // Auto-play feature (optional)
+        setInterval(nextSlide, 5000); // Changes slide every 5 seconds
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

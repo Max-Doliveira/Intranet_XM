@@ -1,0 +1,404 @@
+  <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gente e Cultura | Xeque-Mate</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Variáveis de Cor --- */
+        :root {
+            --xm-yellow: #FFD500; /* Amarelo Xeque-Mate */
+            --xm-black: #111111;
+            --xm-dark-gray: #1E1E1E;
+            --xm-light-gray: #F5F5F5;
+            --xm-white: #FFFFFF;
+        }
+
+        /* --- Reset & Tipografia --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--xm-light-gray);
+            color: var(--xm-black);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* --- Botões --- */
+        .btn {
+            display: inline-block;
+            background-color: var(--xm-yellow);
+            color: var(--xm-black);
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            padding: 15px 30px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            background-color: #e6c000;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            position: relative;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            /* Imagem de placeholder simulando a equipe urbana */
+            background-image: linear-gradient(to right, rgba(17,17,17,0.9) 10%, rgba(17,17,17,0.3) 100%), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--xm-white);
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--xm-white);
+        }
+
+        .hero h1 span {
+            color: var(--xm-yellow);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        /* --- Manifesto Section --- */
+        .manifesto {
+            background-color: var(--xm-black);
+            color: var(--xm-white);
+            padding: 80px 5%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .manifesto-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .manifesto h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--xm-yellow);
+        }
+
+        .manifesto p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .manifesto-img {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            background-image: url('https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+            background-size: cover;
+            background-position: center;
+            filter: grayscale(100%) contrast(120%);
+        }
+
+        /* --- Pilares Section --- */
+        .pilares {
+            padding: 80px 5%;
+            text-align: center;
+            background-color: var(--xm-light-gray);
+        }
+
+        .pilares-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .pilar-card {
+            background-color: var(--xm-white);
+            padding: 40px 20px;
+            border-top: 5px solid var(--xm-yellow);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .pilar-card h3 {
+            font-size: 1.5rem;
+            margin: 15px 0;
+            color: var(--xm-black);
+        }
+
+        .pilar-icon {
+            font-size: 2.5rem;
+        }
+
+        /* --- Processo Seletivo Section --- */
+        .processo {
+            padding: 80px 5%;
+            background-color: var(--xm-dark-gray);
+            color: var(--xm-white);
+        }
+
+        .processo-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .processo-header h2 {
+            font-size: 2.5rem;
+            color: var(--xm-yellow);
+        }
+
+        .timeline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 200px;
+            background-color: var(--xm-black);
+            padding: 30px;
+            border-left: 3px solid var(--xm-yellow);
+        }
+
+        .step-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            color: var(--xm-yellow);
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+
+        .step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .processo-footer {
+            margin-top: 40px;
+            text-align: center;
+            font-style: italic;
+            color: #aaaaaa;
+        }
+
+        /* --- FAQ Section (Grupo Recolhível) --- */
+        .faq {
+            padding: 80px 5%;
+            background-color: var(--xm-white);
+        }
+
+        .faq h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        details {
+            max-width: 800px;
+            margin: 0 auto 15px auto;
+            background-color: var(--xm-light-gray);
+            border-left: 4px solid var(--xm-black);
+        }
+
+        summary {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--xm-yellow);
+        }
+
+        details[open] summary::after {
+            content: '-';
+        }
+
+        .faq-content {
+            padding: 0 20px 20px 20px;
+        }
+
+        /* --- CTA Final --- */
+        .cta-final {
+            background-color: var(--xm-yellow);
+            padding: 80px 5%;
+            text-align: center;
+            color: var(--xm-black);
+        }
+
+        .cta-final h2 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+
+        .cta-final .btn {
+            background-color: var(--xm-black);
+            color: var(--xm-yellow);
+        }
+
+        .cta-final .btn:hover {
+            background-color: var(--xm-dark-gray);
+        }
+
+        /* --- Responsividade --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero { text-align: center; justify-content: center; background-position: left; }
+            .manifesto-img { height: 250px; }
+            .timeline { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Gente que faz o <span>corre acontecer</span>.</h1>
+            <p>Aqui na Xeque-Mate, nossa maior mistura é o talento de quem não fica parado. Departamento de Gente & Cultura.</p>
+            <a href="#vagas" class="btn">Quero Fazer Parte</a>
+        </div>
+    </header>
+
+    <section class="manifesto">
+        <div class="manifesto-text">
+            <h2>Nosso Mix (Cultura)</h2>
+            <p><strong>Não somos um RH tradicional. Somos Gente e Cultura.</strong></p>
+            <p>Cuidamos do ecossistema que permite à Xeque-Mate ser a voz das ruas. Valorizamos quem tem brilho no olho e o pé no chão.</p>
+            <p>Não buscamos apenas funcionários, buscamos mentes inquietas que entendem que o corre é coletivo. Misturamos a tradição com a energia da noite.</p>
+        </div>
+        <div class="manifesto-img"></div>
+    </section>
+
+    <section class="pilares">
+        <h2>Os Pilares da Nossa Galera</h2>
+        <div class="pilares-grid">
+            <div class="pilar-card">
+                <div class="pilar-icon">🌿</div>
+                <h3>Naturalidade</h3>
+                <p>Valorizamos a essência de cada um, sem filtros. Você é bem-vindo do jeito que é.</p>
+            </div>
+            <div class="pilar-card">
+                <div class="pilar-icon">⚡</div>
+                <h3>Energia Criativa</h3>
+                <p>Autonomia para criar o novo, testar, errar rápido e desafiar o status quo do mercado.</p>
+            </div>
+            <div class="pilar-card">
+                <div class="pilar-icon">🤝</div>
+                <h3>Conexão Real</h3>
+                <p>Unimos a tradição do mate com o ritmo da cidade. O nosso corre é sempre em conjunto.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="processo">
+        <div class="processo-header">
+            <h2>O Caminho até o Brinde</h2>
+            <p>Como entrar pro nosso mix. Um processo ágil, transparente e direto ao ponto.</p>
+        </div>
+        <div class="timeline">
+            <div class="step">
+                <div class="step-number">01</div>
+                <h3>Inscrição & Match</h3>
+                <p>Você se candidata. Queremos ver seu currículo, mas queremos mais ainda entender sua vibe e conexão com a marca.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">02</div>
+                <h3>O Papo Reto</h3>
+                <p>Uma conversa com Gente & Cultura e sua liderança. Sem roteiros engessados, focamos na pessoa por trás do profissional.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">03</div>
+                <h3>Mão na Massa</h3>
+                <p>Algumas funções pedem um desafio prático. É a hora de mostrar como você resolve o corre no dia a dia.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">04</div>
+                <h3>Boas-vindas</h3>
+                <p>Feedback positivo e proposta na mesa. Agora é só preparar o brinde e vestir a camisa.</p>
+            </div>
+        </div>
+        <div class="processo-footer">
+            <p>* Damos feedback para todas as etapas. Respeito pelo seu tempo é ingrediente principal aqui.</p>
+        </div>
+    </section>
+
+    <section class="faq">
+        <h2>Ficou alguma dúvida?</h2>
+        
+        <details>
+            <summary>Preciso usar roupa social na entrevista?</summary>
+            <div class="faq-content">
+                <p>Jamais. Venha como você se sente mais confortável. Aqui a gente valoriza a sua identidade e o nosso dress code é 100% livre.</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>O modelo de trabalho é remoto ou presencial?</summary>
+            <div class="faq-content">
+                <p>Depende muito da vaga. Nossa fábrica e operações exigem o presencial em BH, enquanto algumas vagas de marketing e tech rolam num modelo híbrido ou remoto. Confira sempre a descrição da vaga.</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>Posso me candidatar a mais de uma vaga?</summary>
+            <div class="faq-content">
+                <p>Pode sim! Mas aconselhamos focar naquelas que realmente dão match com seu momento de carreira para que a gente consiga te avaliar da melhor forma.</p>
+            </div>
+        </details>
+    </section>
+
+    <footer class="cta-final" id="vagas">
+        <h2>Pronto para dar o próximo xeque?</h2>
+        <a href="#" class="btn">Conhecer Vagas Abertas</a>
+    </footer>
+
+</body>
+</html>  
